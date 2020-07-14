@@ -25,8 +25,6 @@ $gray: 			 #ccc;				//серый
 $dark-gray:  #6e6e6e;			//темно-серый
 $yellow: 		 #ffec00;			//желтый
 
-
-
 $color-3: #b612ad;
 $color-4: #4b8969;
 $color-5: #bcb996;
@@ -43,6 +41,8 @@ $color-8: #f8f8f8;
 *:before,
 *:after {
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 a {
 	text-decoration: none;
@@ -50,61 +50,222 @@ a {
 }
 
 
-/* Header */
+/* Хедер */
+/* Навигация */
 .main-header {
 	width: 100%;
 
 	.header-nav {
+		@extend %ArialMT;
+		font-size: 13px;
+		line-height: 16px;
 		width: 100%;
-		max-height: 40px;
+		min-height: 40px;
 		background-color: $light-gray;
 		border-bottom: 1px solid $gray;
 
-		&-wrapper {
+		&-inner {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 		}
+
+		.nav-bar {
+			list-style-type: none;
+
+			&__nav-link {
+				display: inline-block;
+				padding: 12px 10px;
+				height: 40px;
+
+				&:hover:not(.nav-bar__nav-link_active) {
+					background-color: #fff;
+				}
+
+				&_active {
+					position: relative;
+					color: $dark-gray;
+
+					&:before, 
+					&:after {
+						position: absolute;
+						display: block;
+						content: "";
+						border: 3px solid transparent;
+						border-bottom: 3px solid $gray;
+						bottom: 0px;
+					}
+
+					&:before {
+						border-left: 3px solid $gray;
+						left: 50%;
+					}
+
+					&:after {
+						border-right: 3px solid $gray;
+						right: 50%;
+					}
+				}
+			}
+		}
+
+		.login-bar {
+			&__btn-reg, &__btn-login {
+				border: none;
+				padding: 0 10px;
+				height: 40px;
+
+				&:hover {
+					background-color: #fff;
+				}
+			}
+		}
 	}
 
-	.nav-bar {
-		display: flex;
-		justify-content: space-between;
-		list-style-type: none;
+	.header-about {
+		@extend %ArialMT;
+		font-size: 14px;
+		line-height: 18px;
+		padding-top: 20px;
 
-		&__nav-link {
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			padding-right: 40px;
+			margin-bottom: 20px;
+		}
+
+		&__logo-wrap {
+			margin-right: 150px;
+		}
+
+		&__logo {
+			padding-top: 5px;
+		}
+
+		&__logo-text {
 			@extend %ArialMT;
-			display: inline-block;
-			padding: 10px;
-			height: 40px;
-			vertical-align: middle;
+			font-size: 12px;
+			line-height: 18px;
+			color: $dark-gray;
+			padding-top: 5px;
+		}
 
-			&_active {
-				position: relative;
-				color: $dark-gray;
+		&__address, 
+		&__work-time,
+		&__phone-wrap {
+			position: relative;
+		}
 
-				&:before {
-					position: absolute;
-					display: block;
-					content: "";
-					bottom: 5px;
-					width: 15px;
-					height: 5px;
-					background-color: $gray;
-					right: 50%;
-					
-				}
+		&__icon {
+			position: absolute;
+			color: $gray;
+			top: 5px;
+			left: -35px;
+		}
 
-				&:after {
-					position: absolute;
-					display: block;
-					content: "";
-					bottom: 5px;
-					width: 15px;
-					height: 5px;
-					background-color: $gray;
-					left: 50%;
-				}
+		&__phone {
+			display: block;
+			font-size: 18px;
+			line-height: 24px;
+		}
+
+		&__call-btn {
+			position: relative;
+			display: block;
+			@extend %ArialMTBold;
+			font-size: 11px;
+			line-height: 18px;
+			text-transform: uppercase;
+			padding: 5px 10px;
+			margin-top: 10px;
+			background-color: $yellow;
+			border: none;
+
+			&:before,
+			&:after {
+				position: absolute;
+				display: block;
+				content: "";
+				border: 3px solid transparent;
+				border-bottom: 3px solid $yellow;
+				top: -5px;
+			}
+
+			&:before {
+				border-left: 3px solid $yellow;
+				left: 50%;
+			}
+
+			&:after {
+				border-right: 3px solid $yellow;
+				right: 50%;
+			}
+		}
+	}
+
+	.header-tools {
+		width: 100%;
+		border-top: 3px solid $light-gray;
+		border-bottom: 2px solid $light-gray;
+
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__menu-btn {
+			position: relative;
+			@extend %ArialMTBold;
+			font-size: 16px;
+			line-height: 24px;
+			text-transform: uppercase;
+			text-align: left;
+			width: 140px;
+			height: 100%;
+			padding: 16px 20px;
+			background-color: $light-gray;
+			border: none;
+
+			&:after {
+				position: absolute;
+				display: block;
+				content: "";
+				right: 20px;
+				top: 25px;
+				border: 6px solid transparent;
+				border-top: 6px solid #000;
+			}
+		}
+
+		.search-form {
+			position: relative;
+			width: 400px;
+
+			&__text-field {
+				@extend %ArialMT;
+				font-size: 13px;
+				color: #c4c4c4;
+				width: 100%;
+				height: 32px;
+				border: 2px solid $light-gray;
+				padding: 10px;
+			}
+
+			&__btn {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 32px;
+				height: 32px;
+				border: none;
+				background: url(../img/header/search.png) no-repeat;
+				background-position: center center;
+				background-color: red;
+				cursor: pointer;
+
+				&:
 			}
 		}
 	}
