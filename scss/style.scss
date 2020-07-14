@@ -20,17 +20,19 @@
 }
 
 /* Цвета */
-$bg-1: #fff;				//белый
-$bg-2: #ededed;			//светло-серый
-$bg-3: #ffec00;			//желтый
-$font-1: #000;			//черный
-$font-2: #6e6e6e;		//серый
+$light-gray: #ededed;			//светло-серый
+$gray: 			 #ccc;				//серый
+$dark-gray:  #6e6e6e;			//темно-серый
+$yellow: 		 #ffec00;			//желтый
+
+
+
 $color-3: #b612ad;
 $color-4: #4b8969;
 $color-5: #bcb996;
 $color-6: #238c96;
 $color-8: #f8f8f8;
-$color-9: #ccc;
+
 
 /* Базовые настройки */
 .container {
@@ -41,4 +43,69 @@ $color-9: #ccc;
 *:before,
 *:after {
 	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+
+/* Header */
+.main-header {
+	width: 100%;
+
+	.header-nav {
+		width: 100%;
+		max-height: 40px;
+		background-color: $light-gray;
+		border-bottom: 1px solid $gray;
+
+		&-wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	.nav-bar {
+		display: flex;
+		justify-content: space-between;
+		list-style-type: none;
+
+		&__nav-link {
+			@extend %ArialMT;
+			display: inline-block;
+			padding: 10px;
+			height: 40px;
+			vertical-align: middle;
+
+			&_active {
+				position: relative;
+				color: $dark-gray;
+
+				&:before {
+					position: absolute;
+					display: block;
+					content: "";
+					bottom: 5px;
+					width: 15px;
+					height: 5px;
+					background-color: $gray;
+					right: 50%;
+					
+				}
+
+				&:after {
+					position: absolute;
+					display: block;
+					content: "";
+					bottom: 5px;
+					width: 15px;
+					height: 5px;
+					background-color: $gray;
+					left: 50%;
+				}
+			}
+		}
+	}
 }
