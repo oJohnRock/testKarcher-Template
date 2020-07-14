@@ -1,0 +1,44 @@
+/* Настройка шрифтов */
+@import url('fonts.css');
+
+%ArialMT {
+	font-family: 'ArialMT', sans-serif;
+	font-weight: 400;
+}
+%ArialMTBold {
+	font-family: 'ArialMTBold', sans-serif;
+	font-weight: 700;
+}
+%ArialBlack {
+	font-family: 'ArialBlack', sans-serif;
+	font-weight: 900;
+}
+
+@mixin fset($fz, $color) {
+  font-size: $fz;
+  color: $color;
+}
+
+/* Цвета */
+$bg-1: #fff;				//белый
+$bg-2: #ededed;			//светло-серый
+$bg-3: #ffec00;			//желтый
+$font-1: #000;			//черный
+$font-2: #6e6e6e;		//серый
+$color-3: #b612ad;
+$color-4: #4b8969;
+$color-5: #bcb996;
+$color-6: #238c96;
+$color-8: #f8f8f8;
+$color-9: #ccc;
+
+/* Базовые настройки */
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
