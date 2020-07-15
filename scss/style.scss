@@ -131,12 +131,12 @@ a {
 		&__wrapper {
 			display: flex;
 			justify-content: space-between;
-			padding-right: 40px;
+			padding-right: 50px;
 			margin-bottom: 20px;
 		}
 
 		&__logo-wrap {
-			margin-right: 150px;
+			margin-right: 80px;
 		}
 
 		&__logo {
@@ -148,7 +148,6 @@ a {
 			font-size: 12px;
 			line-height: 18px;
 			color: $dark-gray;
-			padding-top: 5px;
 		}
 
 		&__address, 
@@ -226,7 +225,12 @@ a {
 			height: 100%;
 			padding: 16px 20px;
 			background-color: $light-gray;
-			border: none;
+			cursor: pointer;
+			transition: all .1s linear;
+
+			&:hover {
+				background-color: $yellow;
+			}
 
 			&:after {
 				position: absolute;
@@ -236,6 +240,11 @@ a {
 				top: 25px;
 				border: 6px solid transparent;
 				border-top: 6px solid #000;
+				transition: all .1s linear;
+			}
+
+			&:hover:after {
+				transform: rotate(-90deg) translate(4px, 3px);
 			}
 		}
 
@@ -246,11 +255,11 @@ a {
 			&__text-field {
 				@extend %ArialMT;
 				font-size: 13px;
-				color: #c4c4c4;
 				width: 100%;
 				height: 32px;
 				border: 2px solid $light-gray;
 				padding: 10px;
+				outline: none;
 			}
 
 			&__btn {
@@ -262,11 +271,56 @@ a {
 				border: none;
 				background: url(../img/header/search.png) no-repeat;
 				background-position: center center;
-				background-color: red;
+				background-color: $light-gray;
 				cursor: pointer;
 
-				&:
+
+				&:before {
+					position: absolute;
+					display: block;
+					content: "";
+					border: 5px solid transparent;
+					border-right: 5px solid $light-gray;
+					left: -10px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
 			}
+		}
+
+		&__user-tools {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			font-size: 12px;
+			line-height: 18px;
+			width: 320px;
+
+			&-inner {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		.user-tool {
+			&__number {
+				@extend %ArialMTBold;
+				display: inline-block;
+				text-align: center;
+				padding-top: 2px;
+				width: 22px;
+				height: 22px;
+				border-radius: 50%;
+				background-color: $light-gray;
+
+				&_active {
+					background-color: $yellow;
+				}
+			}
+		}
+
+		&__payment-sum {
+			@extend %ArialMT;
 		}
 	}
 }
