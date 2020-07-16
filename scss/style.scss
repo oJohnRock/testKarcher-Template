@@ -1,795 +1,333 @@
 /* Настройка шрифтов */
 @import url('fonts.css');
-
-%ArialMT {
-	font-family: 'ArialMT', sans-serif;
-	font-weight: 400;
-}
-%ArialMTBold {
-	font-family: 'ArialMTBold', sans-serif;
-	font-weight: 700;
-}
 %ArialBlack {
 	font-family: 'ArialBlack', sans-serif;
 	font-weight: 900;
 }
-
-@mixin fset($fz, $color) {
-  font-size: $fz;
-  color: $color;
+%Arial {
+	font-family: 'Arial', sans-serif;
+	font-weight: 400;
+}
+%ArialBold {
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
 }
 
 /* Цвета */
 $light-gray: #ededed;			//светло-серый
-$gray: 			 #ccc;				//серый
+$gray: 			 #cccccc;			//серый
 $dark-gray:  #6e6e6e;			//темно-серый
 $yellow: 		 #ffec00;			//желтый
 
-$color-3: #b612ad;
-$color-4: #4b8969;
-$color-5: #bcb996;
-$color-6: #238c96;
-$color-8: #f8f8f8;
-
-
 /* Базовые настройки */
-.container {
-	width: 1200px;
-	margin: 0 auto;
-}
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-a {
-	text-decoration: none;
+body {
+	@extend %Arial;
 	color: #000;
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 }
-
-
-/* Хедер */
-/* Навигация */
-.main-header {
+.plug {
 	width: 100%;
-
-	.header-nav {
-		@extend %ArialMT;
-		font-size: 13px;
-		line-height: 16px;
-		width: 100%;
-		min-height: 40px;
-		background-color: $light-gray;
-		border-bottom: 1px solid $gray;
-
-		&-inner {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		.nav-bar {
-			list-style-type: none;
-
-			&__nav-link {
-				display: inline-block;
-				padding: 12px 10px;
-				height: 40px;
-
-				&:hover:not(.nav-bar__nav-link_active) {
-					background-color: #fff;
-				}
-
-				&_active {
-					position: relative;
-					color: $dark-gray;
-					pointer-events: none;
-
-					&:after {
-						position: absolute;
-						display: block;
-						content: "";
-						bottom: 0;
-						left: 50%;
-						transform: translateX(-50%);
-						border-top: 4px solid transparent;
-						border-bottom: 4px solid $gray;
-						border-left: 7px solid transparent;
-						border-right: 7px solid transparent;
-					}
-				}
-			}
-		}
-
-		.login-bar {
-			&__btn-reg, &__btn-login {
-				border: none;
-				padding: 0 10px;
-				height: 40px;
-
-				&:hover {
-					background-color: #fff;
-				}
-			}
-		}
-	}
-
-	.header-about {
-		@extend %ArialMT;
-		font-size: 14px;
-		line-height: 18px;
-		padding-top: 20px;
-
-		&__wrapper {
-			display: flex;
-			justify-content: space-between;
-			padding-right: 50px;
-			margin-bottom: 20px;
-		}
-
-		&__logo-wrap {
-			margin-right: 80px;
-		}
-
-		&__logo {
-			padding-top: 5px;
-		}
-
-		&__logo-text {
-			@extend %ArialMT;
-			font-size: 12px;
-			line-height: 18px;
-			color: $dark-gray;
-		}
-
-		&__address, 
-		&__work-time,
-		&__phone-wrap {
-			position: relative;
-
-			span {
-				@extend %ArialMTBold;
-			}
-		}
-
-		&__icon {
-			position: absolute;
-			color: $gray;
-			top: 5px;
-			left: -35px;
-		}
-
-		&__phone {
-			display: block;
-			font-size: 18px;
-			line-height: 24px;
-		}
-
-		&__call-btn {
-			position: relative;
-			display: block;
-			@extend %ArialMTBold;
-			font-size: 11px;
-			line-height: 18px;
-			text-transform: uppercase;
-			padding: 5px 10px;
-			margin-top: 10px;
-			background-color: $yellow;
-			border: none;
-
-			&:before,
-			&:after {
-				position: absolute;
-				display: block;
-				content: "";
-				border: 3px solid transparent;
-				border-bottom: 3px solid $yellow;
-				top: -5px;
-			}
-
-			&:before {
-				border-left: 3px solid $yellow;
-				left: 50%;
-			}
-
-			&:after {
-				border-right: 3px solid $yellow;
-				right: 50%;
-			}
-		}
-	}
-
-	.header-tools {
-		width: 100%;
-		border-top: 3px solid $light-gray;
-		border-bottom: 2px solid $light-gray;
-
-		&__wrapper {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		&__menu-button {
-			position: relative;
-			display: block;
-			@extend %ArialMTBold;
-			font-size: 16px;
-			line-height: 24px;
-			text-transform: uppercase;
-			text-align: left;
-			width: 140px;
-			height: 100%;
-			padding: 10px 20px;
-			cursor: default;
-			background-color: $light-gray;
-			transition: all .1s linear;
-
-			&:after {
-				position: absolute;
-				display: block;
-				content: "";
-				right: 20px;
-				top: 20px;
-				border: 6px solid transparent;
-				border-top: 6px solid #000;
-				transition: all .1s linear;
-			}
-
-			&:hover {
-				background-color: $yellow;
-			}
-
-			&:hover:after {
-				transform: rotate(-90deg) translate(4px, 3px);
-			}
-
-			&:hover .catalog {
-				display: block;
-			}
-
-			.catalog {
-				position: absolute;
-				display: block;
-				top: 0;
-				left: 100%;
-
-				&__type {
-					background-color: $light-gray;
-					color: #000;
-					height: 46px;
-					min-width: 300px;
-					padding: 10px;
-					transition: all .1s linear;
-
-					&:hover {
-						position: relative;
-						background-color: #000;
-						color: $yellow;
-
-						&:after {
-							position: absolute;
-							display: block;
-							content: "";
-							transform: translateX(-50%);
-							border-top: 6px solid transparent;
-							border-bottom: 6px solid #fff;
-							border-left: 10px solid transparent;
-							border-right: 10px solid transparent;
-						}
-					}
-				}
-
-				&__type:hover .catalog__drop {
-					display: block;
-				}
-
-				&__type-name {
-					@extend %ArialMTBold;
-					font-size: 14px;
-					line-height: 24px;
-					text-transform: uppercase;
-				}
-
-				&__drop {
-					position: absolute;
-					display: block;
-					top: 100%;
-					left: -140px;
-					background-color: #fff;
-					padding: 30px;
-					width: 1200px;
-				}
-
-				&__list {
-					display: flex;
-					justify-content: space-around;
-					align-items: center;
-					text-align: center;
-				}
-
-				.item {
-					position: relative;
-					width: 180px;
-					padding-bottom: 10px;
-					transition: all .1s linear;
-					
-/* тут остновился */
-
-					&__hide {
-						position: absolute;
-						top: 50%;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background-color: rgba(255, 236, 0, .8);
-						opacity: 1;
-
-						&:after {
-							position: absolute;
-							display: block;
-							content: "";
-							bottom: 0;
-							left: 50%;
-							transform: translateX(-50%);
-							border-top: 6px solid transparent;
-							border-bottom: 6px solid #fff;
-							border-left: 10px solid transparent;
-							border-right: 10px solid transparent;
-						}
-					}
-
-					&__link {
-						position: absolute;
-						width: 160px;
-						border: 2px solid #000;
-						@extend %ArialMTBold;
-						font-size: 14px;
-						line-height: 18px;
-						padding: 6px;
-						text-transform: uppercase;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
-					}
-
-					&__desc {
-						@extend %ArialMTBold;
-						color: #000;
-						font-size: 12px;
-						line-height: 14px;
-						text-transform: uppercase;
-					}
-				}
-			}
-		}
-
-		
-
-		
-
-		.search-form {
-			position: relative;
-			width: 400px;
-
-			&__text-field {
-				@extend %ArialMT;
-				font-size: 13px;
-				width: 100%;
-				height: 32px;
-				border: 2px solid $light-gray;
-				padding: 10px;
-				outline: none;
-			}
-
-			&__btn {
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 32px;
-				height: 32px;
-				border: none;
-				background: url(../img/header/search.png) no-repeat;
-				background-position: center center;
-				background-color: $light-gray;
-				cursor: pointer;
-
-
-				&:before {
-					position: absolute;
-					display: block;
-					content: "";
-					border: 5px solid transparent;
-					border-right: 5px solid $light-gray;
-					left: -10px;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-			}
-		}
-
-		&__user-tools {
-			position: relative;
-			display: flex;
-			justify-content: space-between;
-			font-size: 12px;
-			line-height: 18px;
-			width: 320px;
-
-			&-inner {
-				display: flex;
-				justify-content: center;
-			}
-		}
-
-		.user-tool {
-			&__number {
-				@extend %ArialMTBold;
-				display: inline-block;
-				text-align: center;
-				padding-top: 2px;
-				width: 22px;
-				height: 22px;
-				border-radius: 50%;
-				background-color: $light-gray;
-
-				&_active {
-					background-color: $yellow;
-				}
-			}
-		}
-
-		&__payment-sum {
-			@extend %ArialMT;
-
-			span {
-				@extend %ArialMTBold;
-			}
-		}
-	}
+	height: 400px;
+	margin: 20px 0;
+	background-color: gray;
 }
 
-.section-header {
-	.bread-crumbs {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		@extend %ArialMT;
-		font-size: 12px;
-		line-height: 18px;
-		color: $gray;
-		width: 100%;
-		height: 50px;
 
-		&__link {
-			@extend %ArialMT;
-			font-size: 12px;
-			line-height: 18px;
-			color: $dark-gray;
+/* Header */
+.header {
+	width: 100%;
+}
 
-			&_active {
-				color: $gray;
-				pointer-events: none;
-			}
-		}
+/* верхнее меню */
+.header-menu {
+	width: 100%;
+	background-color: $light-gray;
+	border-bottom: 1px solid $gray;
 
-		&__arrow {
-			padding: 0px 5px;
-		}
-	}
 
-	.section-title {
-		background: url(../img/product/bg1.jpg) center no-repeat;
-		background-size: cover;
-		margin-bottom: 30px;
-
-		&__color-bg {
-			padding: 30px 0;
-			background: rgba(255, 236, 0, .8)
-		}
-
-		&__title {
-			@extend %ArialBlack;
-			font-size: 30px;
-			text-transform: uppercase;
-			margin-bottom: 20px;
-		}
-
-		&__desc {
-			@extend %ArialMT;
-			font-size: 14px;
-		}
-	}
-
-	.product {
+	&__nav {
 		display: flex;
 		justify-content: space-between;
-		padding-bottom: 30px;
+	}
 
-		&__slider {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
+	&__list,
+	&__auth {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item {
+		display: inline-block;
+		font-size: 13px;
+		line-height: 16px;
+		padding: 10px;
+
+		&:hover:not(.header-menu__item_active) {
+			background-color: #fff;
 		}
 
-		.slider-gallery {
-			&__min-wrapper {
-				margin-right: 30px;
-			}
-
-			&__min-img {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 80px;
-				height: 80px;
-				border: 2px solid $light-gray;
-				margin-bottom: 10px;
-
-				&_active {
-					position: relative;
-					border: 2px solid $yellow;
-
-					&:after {
-						position: absolute;
-						display: block;
-						content: "";
-						width: 10px;
-						height: 20px;
-						right: -9px;
-						top: 50%;
-						transform: translateY(-50%);
-						background: url(../img/product/slider-border-active.png) center no-repeat;
-						background-size: cover;
-					}
-				}
-			}
-
-			&__min-photo {}
-
-			&__big-img {
-				width: 500px;
-				height: 500px;
-				padding: 20px;
-				border: 3px solid $light-gray;
-			}
-		}
-
-		&__cart {
-			width: 560px;
-		}
-
-		&__head-wrap {
-			display: flex;
-			justify-content: space-between;
-			padding-bottom: 30px;
-			border-bottom: 2px solid $light-gray;
-		}
-
-		&__topic-wrap {
-		}
-
-		&__in-stock {
+		&_active {
 			position: relative;
-			display: block;
-			@extend %ArialMT;
-			font-size: 12px;
-			line-height: 16px;
-			color: $dark-gray;
-			padding-left: 28px;
-			margin-bottom: 15px;
+			color: $gray;
+			cursor: default;
 
-			&:before {
+			&::after {
 				position: absolute;
 				display: block;
 				content: "";
-				width: 18px;
-				height: 18px;
-				left: 0px;
-				top: 50%;
-				transform: translateY(-50%);
-				background: url(../img/product/check.png) center no-repeat;
-				background-size: cover;
-			}
-		}
-
-		&__title {
-			@extend %ArialMTBold;
-			font-size: 18px;
-			text-transform: uppercase;
-		}
-
-		.tags {
-			display: flex;
-			align-items: center;
-			&__item {
-				position: relative;
-				display: inline-block;
-				margin-left: 5px;
-				width: 43px;
-				height: 26px;
-				@extend %ArialMTBold;
-				font-size: 12px;
-				line-height: 16px;
-				text-transform: uppercase;
-				text-align: center;
-				padding: 5px;
-
-				&:before,
-				&:after {
-					position: absolute;
-					display: block;
-					content: "";
-					left: 50%;
-					transform: translateX(-50%);
-					border-left: 21px solid transparent;
-					border-right: 21px solid transparent;
-				}
-
-				&:before {
-					top: -26px;
-					left: 50%;
-					border-top: 13px solid transparent;
-				}
-
-				&:after {
-					bottom: -26px;
-					left: 50%;
-					border-bottom: 13px solid transparent;
-				}
-
-				&_new {
-					background-color: #000;
-					color: #fff;
-					
-					&:before {
-						border-bottom: 13px solid #000;
-					}
-
-					&:after {
-						border-top: 13px solid #000;
-					}
-				}
-
-				&_hit {
-					background-color: $yellow;
-					color: #000;
-
-					&:before {
-						border-bottom: 13px solid $yellow;
-					}
-
-					&:after {
-						border-top: 13px solid $yellow;
-					}
-				}
-			}
-		}
-
-		.review {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			height: 80px;
-			border-bottom: 2px solid $light-gray;
-
-			&__stars {
-				font-size: 18px;
-				color: $yellow;
-			}
-
-			&__comment {
-				@extend %ArialMTBold;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				border: none;
-				background: none;
-
-				i {
-					font-size: 20px;
-					margin-right: 10px;
-				}
-
-				span {
-					font-size: 12px;
-					line-height: 16px;
-					text-transform: uppercase;
-					text-decoration: underline;
-					text-decoration-style: dashed;
-				}
-			}
-		}
-
-		.tools-cart {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-			padding: 30px 0;
-
-			&__price-wrap {
-				position: relative;
-				margin-right: 80px;
-			}
-
-			&__price-field {
-				position: relative;
-				width: 220px;
-				height: 46px;
-				border: 3px solid $yellow;
-				@extend %ArialMTBold;
-				font-size: 20px;
-				padding: 10px;
-				text-align: center;
-
-				&:after {
-					position: absolute;
-					display: block;
-					content: "";
-					width: 10px;
-					height: 10px;
-					right: -2px;
-					top: 50%;
-					background-color: #fff;
-					transform: rotate(45deg) translateY(-50%);
-					z-index: 100;
-				}
-			}
-
-			&__price-basket {
-				position: absolute;
-				top: 0;
-				right: -60px;
-				border: none;
-				background-color: $yellow;
-				width: 60px;
-				height: 46px;
-			}
-
-			&__btn {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				border: none;
-				background-color: #fff;
-
-				img {
-					margin-right: 10px;
-				}
-				span{
-					@extend %ArialMTBold;
-					font-size: 12px;
-					text-transform: uppercase;
-					text-decoration: underline;
-					text-decoration-style: dashed;
-				}
-			}
-		}
-
-		.desc-cart {
-			@extend %ArialMT;
-			font-size: 14px;
-			line-height: 18px;
-			color: $dark-gray;
-
-			p {
-				margin-bottom: 20px;
-			}
-
-			&__link {
-				@extend %ArialMTBold;
-				color: #000;
-				text-decoration: underline;
-				text-decoration-style: dotted;
-			}
-
-			&__code {
-				span {
-					@extend %ArialMTBold;
-					color: #000;
-				}
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				border-top: 4px solid transparent;
+				border-bottom: 4px solid $gray;
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
 			}
 		}
 	}
 }
+
+/* информационный блок */
+.header-info {
+	padding: 20px 0;
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__inner {
+		padding: 5px 0;
+	}
+
+	&__logo {
+		margin-bottom: 5px;
+	}
+
+	&__desc {
+		font-size: 12px;
+		line-height: 18px;
+		color: $dark-gray;
+	}
+
+	&__about {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+
+	&__text {
+		position: relative;
+		width: 240px;
+		padding-left: 35px;
+		font-size: 14px;
+		line-height: 18px;
+
+		i {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 30px;
+			color: $gray;
+		}
+
+		span {
+			@extend %ArialBold;
+		}
+	}
+
+	&__contacts {
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	&__call-back {
+		position: relative;
+		@extend %ArialBold;
+		display: inline-block;
+		font-size: 11px;
+		line-height: 18px;
+		text-transform: uppercase;
+		background-color: $yellow;
+		padding: 5px 10px;
+		margin-top: 10px;
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: "";
+			top: -8px;
+			left: 50%;
+			transform: translateX(-50%);
+			border-top: 4px solid transparent;
+			border-bottom: 4px solid $yellow;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {}
+
+@media (max-width: 768px) {
+	.header-menu {
+		/* кнопка меню */
+		&__btn {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 40px;
+			height: 40px;
+			z-index: 30;
+			background-color: $gray;
+	
+			&:hover {
+				background-color: $dark-gray;
+			}
+		}
+	
+		&__lines,
+		&__lines::before,
+		&__lines::after {
+			position: absolute;
+			width: 20px;
+			height: 2px;
+			background-color: #000;
+			transition: .4s;
+		}
+	
+		&__lines {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+	
+			&::before {
+				content: "";
+				bottom: 5px;
+			}
+	
+			&::after {
+				content: "";
+				top: 5px;
+			}
+		}
+	
+		&_active .header-menu__btn,
+		&_active .header-menu__lines {
+			background-color: transparent;
+		}
+
+		&_active .header-menu__lines {
+			&::before {
+				transform: rotate(45deg);
+				bottom: 0;
+			}
+	
+			&::after {
+				transform: rotate(-45deg);
+				top: 0;
+			}
+		}
+	
+		/* панель навигиции */
+		&__nav {
+			position: fixed;
+			padding-top: 40px;
+			z-index: 20;
+			display: flex;
+			flex-flow: column;
+			height: 100%;
+			background-color: $light-gray;
+			overflow-y: auto;
+			left: -100%;
+			transition: .5s;
+		}
+	
+		&_active .header-menu {
+			&__nav {
+				left: 0;
+				border-right: 1px solid $gray;
+			}
+		}
+	
+		&__list,
+		&__auth {
+			display: flex;
+			flex-flow: column;
+		}
+	
+		&__auth {
+			background-color: $gray;
+		}
+	
+		&__item {
+			display: block;
+			font-size: 18px;
+			line-height: 24px;
+			padding: 5px 10px;
+			width: 100%;
+	
+			&:hover:not(.header-menu__item_active) {
+				background-color: #fff;
+			}
+
+			&_active::after {
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				border-top: 7px solid transparent;
+				border-bottom: 7px solid transparent;
+				border-left: 4px solid transparent;
+				border-right: 4px solid $gray;
+			}
+		}
+	
+		&__overlay {
+			position: fixed;
+			display: none;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+		}
+	
+		&_active .header-menu__overlay {
+			display: block;
+			background-color: rgba(0, 0, 0, .1);
+		}
+	}
+
+	.header-info {
+		margin-top: 30px;
+
+		&__wrap {
+			margin: 0 auto;
+		}
+	}
+}
+
+@media (max-width: 576px) {}
+
+@media (max-width: 425px) {}
+
+@media (max-width: 320px) {}

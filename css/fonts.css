@@ -1,37 +1,11 @@
 @font-face {
-    font-family: 'ArialMT';
-    src: url('../fonts/ArialCyrMT.eot');
-    src: url('../fonts/ArialCyrMT.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ArialCyrMT.woff2') format('woff2'),
-        url('../fonts/ArialCyrMT.woff') format('woff'),
-        url('../fonts/ArialCyrMT.ttf') format('truetype'),
-        url('../fonts/ArialCyrMT.svg#ArialCyrMT') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'ArialMTBold';
-    src: url('../fonts/ArialCyrMT-Bold.eot');
-    src: url('../fonts/ArialCyrMT-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ArialCyrMT-Bold.woff2') format('woff2'),
-        url('../fonts/ArialCyrMT-Bold.woff') format('woff'),
-        url('../fonts/ArialCyrMT-Bold.ttf') format('truetype'),
-        url('../fonts/ArialCyrMT-Bold.svg#ArialCyrMT-Bold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'ArialBlack';
-    src: url('../fonts/Arial-Black.eot');
-    src: url('../fonts/Arial-Black.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Arial-Black.woff2') format('woff2'),
-        url('../fonts/Arial-Black.woff') format('woff'),
-        url('../fonts/Arial-Black.ttf') format('truetype'),
-        url('../fonts/Arial-Black.svg#Arial-Black') format('svg');
+    src: url('../fontsArial-Black.eot');
+    src: url('../fontsArial-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fontsArial-Black.woff2') format('woff2'),
+        url('../fontsArial-Black.woff') format('woff'),
+        url('../fontsArial-Black.ttf') format('truetype'),
+        url('../fontsArial-Black.svg#Arial-Black') format('svg');
     font-weight: 900;
     font-style: normal;
     font-display: swap;

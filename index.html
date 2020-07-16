@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Ювента-Крым</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -10,247 +11,144 @@
 </head>
 <body>
 
-	<header class="main-header">
-
-		<nav class="header-nav">
+	<header class="header">
+		
+		<div class="header-menu">
 			<div class="container">
-				<div class="header-nav-inner">
-					<div class="nav-bar">
-						<a href="#" class="nav-bar__nav-link nav-bar__nav-link_active">Главная</a>
-						<a href="#" class="nav-bar__nav-link">О компании</a>
-						<a href="#" class="nav-bar__nav-link">Оплата</a>
-						<a href="#" class="nav-bar__nav-link">Доставка</a>
-						<a href="#" class="nav-bar__nav-link">Гарантия</a>
-						<a href="#" class="nav-bar__nav-link">Акции %</a>
-						<a href="#" class="nav-bar__nav-link">Контакты</a>
-					</div>
-					<div class="header-nav__login-bar login-bar">
-						<button class="login-bar__btn-reg">Регистрация</button>
-						<button class="login-bar__btn-login">Войти</button>
-					</div>
-				</div>
-			</div>
-		</nav>
-
-		<div class="header-about">
-			<div class="container">
-				
-				<div class="header-about__wrapper">
-					<div class="header-about__logo-wrap">
-						<img src="img/header/logo.png" alt="logo" class="header-about__logo">
-						<p class="header-about__logo-text">Официальный дистрибьютер в Крыму с 2005 года</p>
-					</div>
-					<p class="header-about__address">
-						<img src="img/header/marker.png" alt="address" class="header-about__icon">
-						Ближайший магазин<br/>
-						<span>Симферополь</span><br/>
-						ул. Маяковского 14-Э
-					</p>
-					<p class="header-about__work-time">
-						<img src="img/header/alarm.png" alt="time" class="header-about__icon">
-						Пн. - Пт.:<br/>
-						<span>09:00 - 18:00</span><br/>
-						Выходные:<br/>
-						Сб. - Вс.
-					</p>
-					<div class="header-about__phone-wrap">
-						<img src="img/header/phone.png" alt="phone" class="header-about__icon">
-						<a href="tel:+79787290215" class="header-about__phone">+7(978) <span>729-02-15</span></a>
-						<a href="tel:+73652248231" class="header-about__phone">(3652) <span>24-82-31</span></a>
-						<button class="header-about__call-btn">обратный звонок</button>
-					</div>
-				</div>
-
+				<a class="header-menu__btn" href="#">
+					<span class="header-menu__lines"></span>
+				</a>
+				<nav class="header-menu__nav">
+					<ul class="header-menu__list">
+						<li>
+							<a class="header-menu__item header-menu__item_active" >Главная</a>
+						</li>
+						<li>
+							<a class="header-menu__item" href="#">О компании</a>
+						</li>
+						<li>
+							<a class="header-menu__item" href="#">Оплата</a>
+						</li>
+						<li>
+							<a class="header-menu__item" href="#">Доставка</a>
+						</li>
+						<li>
+							<a class="header-menu__item" href="#">Гарантия</a>
+						</li>
+						<li>
+							<a class="header-menu__item" href="#">Акции %</a>
+						</li>
+						<li>
+							<a class="header-menu__item" href="#">Контакты</a>
+						</li>
+					</ul>
+					<ul class="header-menu__auth">
+						<li>
+							<a class="header-menu__item" href="#">Регистрация</a>
+						</li>
+						<li>
+							<a class="header-menu__item" href="#">Войти</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header-menu__overlay"></div>
 			</div>
 		</div>
 
-		<div class="header-tools">
+		<section class="header-info">
 			<div class="container">
 				
-				<div class="header-tools__wrapper">
-					<div class="header-tools__menu-button">
-						<p>Каталог</p>
-						<ul class="catalog">
-							<li class="catalog__type">
-								<p class="catalog__type-name">Home & Garden / Бытовая техника</p>
-								<div class="catalog__drop">
-									<ul class="catalog__list">
-										<li class="catalog__item item">
-											<div class="item__hide animate__fadeInUp">
-												<a href="#" class="item__link">Системы полива и орошения</a>
-											</div>
-											<img class="item__photo" src="img/header/menu/menu-item-1.png" alt="photo">
-											<p class="item__desc">Аппараты высокого давления</p>
-										</li>
-									</ul>
-								</div>
-								
-							</li>
-						</ul>
-
+				<div class="header-info__wrap">
+					<div class="header-info__inner">
+						<img class="header-info__logo" src="img/header/logo.png" alt="logo">
+						<p class="header-info__desc">Официальный дистрибьютер в Крыму с 2005 года</p>
 					</div>
-					
-
-					
-
-
-					<form class="header-tools__search-form search-form">
-						<input class="search-form__text-field" type="text" placeholder="Что ищем?">
-						<button class="search-form__btn" type="submit"></button>
-					</form>
-					<div class="header-tools__user-tools">
-						<div class="header-tools__user-tools-inner user-tool">
-							<a href="#" class="user-tool__icon-link">
-								<img class="user-tool__icon" src="img/header/heart.png" alt="wish list">
-							</a>
-							<span class="user-tool__number">0</span>
+					<div class="header-info__about">
+						<p class="header-info__address header-info__text">
+							<i class="fas fa-map-marker-alt"></i>
+							Ближайший магазин<br/>
+							<span>Симферополь</span><br/>
+							ул. Маяковского 14-Э
+						</p>
+						<p class="header-info__work-time header-info__text">
+							<i class="far fa-clock"></i>
+							Пн. - Пт.:<br/>
+							<span>09:00 - 18:00</span><br/>
+							Выходные:<br/>
+							Сб. - Вс.
+						</p>
+						<div class="header-info__contacts header-info__text">
+							<i class="fas fa-mobile-alt"></i>
+							<a class="header-info__phone" href="tel:+79787290215">+7(978) <span>729-02-15</span></a>
+							<a class="header-info__phone" href="tel:+73652248231">(3652) <span>24-82-31</span></a>
+							<a class="header-info__call-back" href="#">обратный звонок</a>
 						</div>
-						<div class="header-tools__user-tools-inner user-tool">
-							<a href="#" class="user-tool__icon-link">
-								<img class="user-tool__icon" src="img/header/files.png" alt="compare">
-							</a>
-							<span class="user-tool__number">0</span>
-						</div>
-						<div class="header-tools__user-tools-inner user-tool">
-							<a href="#" class="user-tool__icon-link">
-								<img class="user-tool__icon" src="img/header/shopping-basket.png" alt="shopping cart">
-							</a>
-							<span class="user-tool__number user-tool__number_active">2</span>
-						</div>
-						<p class="header-tools__payment-sum">На сумму - <span>23 140</span> руб.</p>
 					</div>
 				</div>
-				
-			</div>
-		</div>
 
+			</div>
+		</section>
 	</header>
 
-	<section class="section-header">
-		<div class="container">
-
-			<div class="section-header__bread-crumbs bread-crumbs">
-				<a href="#" class="bread-crumbs__link">Главная</a>
-				<i class="fas fa-angle-right bread-crumbs__arrow"></i>
-				<a href="#" class="bread-crumbs__link">Home & Garden</a>
-				<i class="fas fa-angle-right bread-crumbs__arrow"></i>
-				<a href="#" class="bread-crumbs__link">Бытовые пылесосы</a>
-				<i class="fas fa-angle-right bread-crumbs__arrow"></i>
-				<a href="#" class="bread-crumbs__link bread-crumbs__link_active">Пылесос с аквафильтром Karcher DS 6.000 Mediclean</a>
-			</div>
-
-		</div>
-
-		<div class="section-header__text section-title">
-			<div class="section-title__color-bg">
-				<div class="container">
-					
-					<h1 class="section-title__title">
-						Пылесос с водяным фильтром 
-					</h1>
-					<p class="section-title__desc">
-						Высочайшая сила всасывания и многоступенчатая система фильтрации, реализованная в пылесосе DS 6000 Mediclean, делают воздух в помещении до 99,99% чище. Аллергики могут вздохнуть спокойно! Пылесос с аквафильтром DS 6.000 Mediclean рекомендован Российской Ассоциацией Аллергологов и Клинических иммунологов (РААКИ).
-					</p>
-
-				</div>
-			</div>
-			
-		</div>
-
-		<div class="container">
-			
-			<div class="product">
-				<div class="product__slider slider-gallery">
-					<div class="slider-gallery__min-wrapper">
-						<div class="slider-gallery__min-img slider-gallery__min-img_active">
-							<img class="min-photo" src="img/product/small-img-1.jpg" alt="min-photo">
-						</div>
-						<div class="slider-gallery__min-img">
-							<img class="min-photo" src="img/product/small-img-2.jpg" alt="min-photo">
-						</div>
-						<div class="slider-gallery__min-img">
-							<img class="min-photo" src="img/product/small-img-3.jpg" alt="min-photo">
-						</div>
-						<div class="slider-gallery__min-img">
-							<img class="min-photo" src="img/product/small-img-4.jpg" alt="min-photo">
-						</div>
-					</div>
-					<div class="slider-gallery__big-img">
-						<img class="big-photo" src="img/product/big-img-1.png" alt="big-photo">
-					</div>
-				</div>
-
-				<div class="product__cart">
-
-					<div class="product__head-wrap">
-						<div class="product__topic-wrap">
-							<span class="product__in-stock">В наличии</span>
-							<h2 class="product__title">Karcher DS 6.000 Mediclean</h2>
-						</div>
-						<div class="product__tags tags">
-							<div class="tags__item tags__item_new">New</div>
-							<div class="tags__item tags__item_hit">Хит</div>
-						</div>
-					</div>
-
-					<div class="product__review review">
-						<div class="review__stars">
-							<i class="fas fa-star"></i>
-							<i class="far fa-star"></i>
-							<i class="far fa-star"></i>
-							<i class="far fa-star"></i>
-							<i class="far fa-star"></i>
-						</div>
-						<button class="review__comment">
-							<i class="far fa-comment-dots"></i> <span>Оставить отзыв</span>
-						</button>
-					</div>
-
-					<div class="product__tools tools-cart">
-						<div class="tools-cart__price-wrap">
-							<div class="tools-cart__price-field">21 190 руб.</div>
-							<button class="tools-cart__price-basket">
-								<img src="img/header/shopping-basket.png" alt="price-basket">
-							</button>
-						</div>
-						<button class="tools-cart__btn">
-							<img class="user-tool__icon" src="img/header/heart.png" alt="wish list">
-							<span>В избранное</span>
-						</button>
-						<button class="tools-cart__btn">
-							<img class="user-tool__icon" src="img/header/files.png" alt="compare">
-							<span>Сравнить</span>
-						</button>
-					</div>
-
-					<div class="product__desc desc-cart">
-						<p class="desc-cart__delivery">
-							Подробные 
-							<a href="#" class="desc-cart__link">условия доставки</a> 
-							и 
-							<a href="#" class="desc-cart__link">оплаты</a>.
-						</p>
-						<p class="desc-cark__guarantee">
-							<a href="#" class="desc-cart__link">Гарантия на бытовую технику 5 лет!</a>
-						</p>
-						<p class="desc-cart__annotation">
-							Качественная чистка полов, ковровых покрытий и мягкой мебели. Благодаря  дополнительному фильтру  HEPA 13 очищается воздух в помещении от мелких частиц пыли, спор и пыльцы, вызывающих аллергию, а система Perma Power увлажняет его. Легкий, удобный в эксплуатации. Рекомендован для использования в медицинских учреждениях.
-						</p>
-						<p class="desc-cart__code">
-							<span>Артикул:</span> 1.195-202.0
-						</p>
-
-					</div>
-
-				</div>
-				
-			</div>
-
-		</div>
-	</section>
+	<div class="container">
+		<section class="plug"></section>
+		<section class="plug"></section>
+		<section class="plug"></section>
+	</div>
+	
 
 
 	<script src="js/script.js"></script>
 
 </body>
 </html>
+
+<!-- <div class="fixed-menu">
+	<div class="container">
+		
+		<nav class="fixed-menu__nav">
+			<ul class="header-menu__list">
+				<li>
+					<a class="header-menu__item header-menu__item_active" >Главная</a>
+				</li>
+				<li>
+					<a class="header-menu__item" href="#">Каталог</a>
+				</li>
+				<li>
+					<a class="header-menu__item" href="#">О компании</a>
+				</li>
+				<li>
+					<a class="header-menu__item" href="#">Оплата</a>
+				</li>
+				<li>
+					<a class="header-menu__item" href="#">Доставка</a>
+				</li>
+				<li>
+					<a class="header-menu__item" href="#">Гарантия</a>
+				</li>
+				<li>
+					<a class="header-menu__item" href="#">Акции %</a>
+				</li>
+				<li>
+					<a class="header-menu__item" href="#">Контакты</a>
+				</li>
+			</ul>
+			<div class="fixed-menu__user-tools user-tools">
+				<div class="user-tools__wish-list">
+					<i class="far fa-heart"></i>
+					<span class="user-tools__number">0</span>
+				</div>
+				<div class="user-tools__wish-list">
+					<i class="far fa-copy"></i>
+					<span class="user-tools__number">0</span>
+				</div>
+				<div class="user-tools__wish-list">
+					<i class="fas fa-shopping-basket"></i>
+					<span class="user-tools__number">2</span>
+				</div>
+				<p class="user-tools__price">На сумму - <span>23 140</span> руб.</p>
+			</div>
+		</nav>
+
+	</div>
+</div> -->
